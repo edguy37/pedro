@@ -8,7 +8,6 @@
 </head>
 <body>
     Lista de productos
-    <?php print_r($productos); ?>
     <div class="container">
         <table class="table table-light">
             <thead class="thead-light">
@@ -20,12 +19,14 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($productos as $producto): ?>
                 <tr>
-                    <td>ID</td>
-                    <td>Descripcion</td>
-                    <td>Traduccion</td>
+                    <td><?php echo $producto['id']; ?></td>
+                    <td><?= $producto['descripcion']; ?></td> <!-- de esta forma tambien es valido y mas rapido -->
+                    <td><?php echo $producto['traduccion']; ?></td>
                     <td>Editar/Borrar</td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
