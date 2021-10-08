@@ -8,6 +8,7 @@
 </head>
 <body>
     Lista de productos
+    <?php print_r($productos); ?>
     <div class="container">
         <table class="table table-light">
             <thead class="thead-light">

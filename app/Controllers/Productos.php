@@ -7,7 +7,10 @@ class Productos extends Controller{
 
     public function index(){
 
-        return view('productos/listar');
+        $producto = new Producto();
+        $datos['productos'] = $producto->orderBy('id', 'ASC')->findAll();
+
+        return view('productos/listar', $datos);
     }
 
 }
