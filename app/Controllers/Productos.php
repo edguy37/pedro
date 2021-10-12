@@ -32,7 +32,7 @@ class Productos extends Controller{
         ];
 
         $producto->insert($datos);
-        echo "subido exitosamente";
+        return $this->response->redirect(site_url('/listar'));
     }
     public function borrar($id=null){
         $producto = new Producto();
