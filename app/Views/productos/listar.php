@@ -1,4 +1,7 @@
 <?php echo $header; ?>
+
+    <a href="<?=base_url('subir')?>">Subir un producto</a>
+
     <table class="table table-light">
         <thead class="thead-light">
             <tr>
