@@ -34,6 +34,13 @@ class Productos extends Controller{
         $producto->insert($datos);
         echo "subido exitosamente";
     }
+    public function borrar($id=null){
+        $producto = new Producto();
+        $datosProducto = $producto->where('id',$id)->first();
 
+        $producto->where('id',$id)->delete($id);
+
+        return $this->response->redirect(site_url('/listar'));
+    }
 
 }
