@@ -50,3 +50,5 @@ if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->get('listar', 'Productos::index');
+$routes->get('subir', 'Productos::subir');
+$routes->post('guardar', 'Productos::guardar');

@@ -15,5 +15,25 @@ class Productos extends Controller{
 
         return view('productos/listar', $datos);
     }
+    public function subir(){
+
+        $datos['header'] = view('template/header');
+        $datos['footer'] = view('template/footer');
+
+        return view('productos/subir', $datos);
+    }
+    public function guardar(){
+
+        $producto = new Producto();
+
+        $datos=[
+            'descripcion'=>$this->request->getVar('descripcion'),
+            'traduccion'=>$this->request->getVar('traduccion')
+        ];
+
+        $producto->insert($datos);
+        echo "subido exitosamente";
+    }
+
 
 }
